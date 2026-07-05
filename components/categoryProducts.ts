@@ -1,0 +1,315 @@
+export type Product = {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+};
+
+function unsplash(id: string) {
+  return `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=800&q=80`;
+}
+
+export const CATEGORY_PRODUCTS: Record<string, Product[]> = {
+  Bread: [
+    {
+      id: "bread-plain-bread",
+      name: "Plain Bread",
+      description: "Soft, pillowy white loaf baked fresh every morning.",
+      price: 3.5,
+      image: unsplash("1509440159596-0249088772ff"),
+    },
+    {
+      id: "bread-multigrain-bread",
+      name: "Multigrain Bread",
+      description: "Wholesome blend of grains and seeds for a hearty bite.",
+      price: 4.5,
+      image: unsplash("1608198093002-ad4e005484ec"),
+    },
+    {
+      id: "bread-garlic-bread",
+      name: "Garlic Bread",
+      description: "Toasted and brushed with garlic herb butter.",
+      price: 4.0,
+      image: unsplash("1509440159596-0249088772ff"),
+    },
+    {
+      id: "bread-brown-bread",
+      name: "Brown Bread",
+      description: "Whole-wheat loaf with a light, nutty finish.",
+      price: 3.75,
+      image: unsplash("1608198093002-ad4e005484ec"),
+    },
+    {
+      id: "bread-milk-bread",
+      name: "Milk Bread",
+      description: "Fluffy Japanese-style loaf, lightly sweet and buttery.",
+      price: 4.25,
+      image: unsplash("1509440159596-0249088772ff"),
+    },
+    {
+      id: "bread-french-loaf",
+      name: "French Loaf",
+      description: "Crisp golden crust with an airy, chewy crumb.",
+      price: 4.75,
+      image: unsplash("1608198093002-ad4e005484ec"),
+    },
+    {
+      id: "bread-sourdough",
+      name: "Sourdough",
+      description: "Slow-fermented for a tangy flavor and rustic crust.",
+      price: 5.5,
+      image: unsplash("1533089860892-a7c6f0a88666"),
+    },
+  ],
+  Cakes: [
+    {
+      id: "cakes-black-forest",
+      name: "Black Forest",
+      description: "Layers of chocolate sponge, cherries and fresh cream.",
+      price: 28.0,
+      image: unsplash("1578985545062-69928b1d9587"),
+    },
+    {
+      id: "cakes-red-velvet",
+      name: "Red Velvet",
+      description: "Velvety cocoa sponge with cream cheese frosting.",
+      price: 30.0,
+      image: unsplash("1621303837174-89787a7d4729"),
+    },
+    {
+      id: "cakes-oreo-cake",
+      name: "Oreo Cake",
+      description: "Chocolate layers loaded with crushed Oreo cookies.",
+      price: 29.0,
+      image: unsplash("1587248720327-8eb72564be1e"),
+    },
+    {
+      id: "cakes-kitkat-cake",
+      name: "KitKat Cake",
+      description: "Chocolate cake wrapped in KitKat fingers and drip.",
+      price: 32.0,
+      image: unsplash("1568051243858-533a607809a5"),
+    },
+    {
+      id: "cakes-lotus-biscoff",
+      name: "Lotus Biscoff",
+      description: "Caramelized biscuit cream layered with Biscoff crumbs.",
+      price: 31.0,
+      image: unsplash("1677840147160-6545dba6f08d"),
+    },
+    {
+      id: "cakes-blueberry-cheesecake",
+      name: "Blueberry Cheesecake",
+      description: "Baked cheesecake topped with a silky blueberry compote.",
+      price: 33.0,
+      image: unsplash("1533134242443-d4fd215305ad"),
+    },
+    {
+      id: "cakes-ferrero-rocher",
+      name: "Ferrero Rocher",
+      description: "Hazelnut chocolate sponge finished with a nutty crunch.",
+      price: 34.0,
+      image: unsplash("1541599468348-e96984315921"),
+    },
+  ],
+  Puff: [
+    {
+      id: "puff-butter-puff",
+      name: "Butter Puff",
+      description: "Flaky, golden layers baked to a delicate crisp.",
+      price: 3.0,
+      image: unsplash("1555507036-ab1f4038808a"),
+    },
+    {
+      id: "puff-paneer-puff",
+      name: "Paneer Puff",
+      description: "Spiced cottage cheese filling in a crisp pastry shell.",
+      price: 3.75,
+      image: unsplash("1509365465985-25d11c17e812"),
+    },
+    {
+      id: "puff-cheese-puff",
+      name: "Cheese Puff",
+      description: "Melted cheese blend baked inside buttery puff pastry.",
+      price: 3.75,
+      image: unsplash("1587241321921-91a834d6d191"),
+    },
+    {
+      id: "puff-veg-puff",
+      name: "Veg Puff",
+      description: "Classic spiced vegetable filling in a flaky crust.",
+      price: 3.25,
+      image: unsplash("1621236378699-8597faf6a176"),
+    },
+    {
+      id: "puff-french-heart",
+      name: "French Heart",
+      description: "Heart-shaped puff pastry with a delicate sugar glaze.",
+      price: 4.0,
+      image: unsplash("1550617931-e17a7b70dce2"),
+    },
+  ],
+  Coffee: [
+    {
+      id: "coffee-espresso",
+      name: "Espresso",
+      description: "Bold, concentrated shot pulled from single-origin beans.",
+      price: 3.0,
+      image: unsplash("1510591509098-f4fdc6d0ff04"),
+    },
+    {
+      id: "coffee-cappuccino",
+      name: "Cappuccino",
+      description: "Equal parts espresso, steamed milk and velvety foam.",
+      price: 4.0,
+      image: unsplash("1461023058943-07fcbe16d735"),
+    },
+    {
+      id: "coffee-latte",
+      name: "Latte",
+      description: "Smooth espresso layered with silky steamed milk.",
+      price: 4.25,
+      image: unsplash("1541167760496-1628856ab772"),
+    },
+    {
+      id: "coffee-mocha",
+      name: "Mocha",
+      description: "Espresso, steamed milk and rich dark chocolate.",
+      price: 4.75,
+      image: unsplash("1578374173705-969cbe6f2d6b"),
+    },
+    {
+      id: "coffee-americano",
+      name: "Americano",
+      description: "Espresso diluted with hot water for a light, clean cup.",
+      price: 3.5,
+      image: unsplash("1497515114629-f71d768fd07c"),
+    },
+    {
+      id: "coffee-cold-coffee",
+      name: "Cold Coffee",
+      description: "Chilled, blended coffee finished with whipped cream.",
+      price: 4.5,
+      image: unsplash("1517701604599-bb29b565090c"),
+    },
+  ],
+  Sandwich: [
+    {
+      id: "sandwich-grilled-cheese",
+      name: "Grilled Cheese",
+      description: "Melted cheese blend between buttery, toasted bread.",
+      price: 6.5,
+      image: unsplash("1550507992-eb63ffee0847"),
+    },
+    {
+      id: "sandwich-veg-sandwich",
+      name: "Veg Sandwich",
+      description: "Crisp garden vegetables layered with herbed spread.",
+      price: 6.0,
+      image: unsplash("1528735602780-2552fd46c7af"),
+    },
+    {
+      id: "sandwich-club-sandwich",
+      name: "Club Sandwich",
+      description: "Triple-decker stack with a hearty, savory filling.",
+      price: 8.5,
+      image: unsplash("1554433607-66b5efe9d304"),
+    },
+    {
+      id: "sandwich-paneer-sandwich",
+      name: "Paneer Sandwich",
+      description: "Spiced cottage cheese and vegetables, lightly grilled.",
+      price: 7.0,
+      image: unsplash("1509722747041-616f39b57569"),
+    },
+    {
+      id: "sandwich-chicken-sandwich",
+      name: "Chicken Sandwich",
+      description: "Tender seasoned chicken with fresh crunchy greens.",
+      price: 8.0,
+      image: unsplash("1481070414801-51fd732d7184"),
+    },
+  ],
+  "Ice Cream": [
+    {
+      id: "ice-cream-chocolate",
+      name: "Chocolate",
+      description: "Rich, creamy scoop made with dark cocoa.",
+      price: 4.0,
+      image: unsplash("1497034825429-c343d7c6a68f"),
+    },
+    {
+      id: "ice-cream-vanilla",
+      name: "Vanilla",
+      description: "Classic, silky scoop made with real vanilla bean.",
+      price: 3.75,
+      image: unsplash("1560008581-09826d1de69e"),
+    },
+    {
+      id: "ice-cream-strawberry",
+      name: "Strawberry",
+      description: "Fresh strawberry churned into a light, fruity scoop.",
+      price: 4.0,
+      image: unsplash("1576506295286-5cda18df43e7"),
+    },
+    {
+      id: "ice-cream-belgian-chocolate",
+      name: "Belgian Chocolate",
+      description: "Decadent scoop made with premium Belgian cocoa.",
+      price: 4.75,
+      image: unsplash("1501443762994-82bd5dace89a"),
+    },
+    {
+      id: "ice-cream-oreo",
+      name: "Oreo",
+      description: "Creamy vanilla base loaded with crushed Oreo cookies.",
+      price: 4.5,
+      image: unsplash("1563805042-7684c019e1cb"),
+    },
+    {
+      id: "ice-cream-butterscotch",
+      name: "Butterscotch",
+      description: "Caramelized butterscotch swirl with a nutty crunch.",
+      price: 4.5,
+      image: unsplash("1570197788417-0e82375c9371"),
+    },
+  ],
+  Biscuits: [
+    {
+      id: "biscuits-chocolate-chip",
+      name: "Chocolate Chip",
+      description: "Classic buttery cookie loaded with chocolate chips.",
+      price: 2.5,
+      image: unsplash("1499636136210-6f4ee915583e"),
+    },
+    {
+      id: "biscuits-almond-cookies",
+      name: "Almond Cookies",
+      description: "Delicate, crumbly cookies topped with sliced almonds.",
+      price: 3.0,
+      image: unsplash("1558961363-fa8fdf82db35"),
+    },
+    {
+      id: "biscuits-butter-cookies",
+      name: "Butter Cookies",
+      description: "Rich, melt-in-your-mouth classic butter cookies.",
+      price: 2.75,
+      image: unsplash("1590080875515-8a3a8dc5735e"),
+    },
+    {
+      id: "biscuits-coconut-cookies",
+      name: "Coconut Cookies",
+      description: "Toasted coconut baked into a light, crisp cookie.",
+      price: 2.75,
+      image: unsplash("1490474418585-ba9bad8fd0ea"),
+    },
+    {
+      id: "biscuits-oatmeal-cookies",
+      name: "Oatmeal Cookies",
+      description: "Chewy oat cookies with a warm hint of cinnamon.",
+      price: 2.75,
+      image: unsplash("1499636136210-6f4ee915583e"),
+    },
+  ],
+};
