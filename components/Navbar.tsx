@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useWhatsAppModal } from "@/components/WhatsAppModalContext";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -13,6 +14,7 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { openBookingModal } = useWhatsAppModal();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 12);
@@ -58,12 +60,13 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <Link
-          href="/contact"
+        <button
+          type="button"
+          onClick={openBookingModal}
           className="hidden min-h-11 items-center justify-center rounded-full bg-coffee px-6 py-2.5 text-sm font-medium text-cream shadow-sm transition-all duration-300 hover:bg-accent hover:shadow-md lg:inline-flex"
         >
           Reserve a Table
-        </Link>
+        </button>
 
         <button
           type="button"
@@ -117,13 +120,16 @@ export default function Navbar() {
             </li>
           ))}
           <li className="pt-2">
-            <Link
-              href="/contact"
-              onClick={() => setIsMenuOpen(false)}
-              className="block rounded-full bg-coffee px-6 py-3 text-center text-sm font-medium text-cream transition-colors hover:bg-accent"
+            <button
+              type="button"
+              onClick={() => {
+                setIsMenuOpen(false);
+                openBookingModal();
+              }}
+              className="block w-full rounded-full bg-coffee px-6 py-3 text-center text-sm font-medium text-cream transition-colors hover:bg-accent"
             >
               Reserve a Table
-            </Link>
+            </button>
           </li>
         </ul>
       </div>

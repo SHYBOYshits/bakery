@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type SVGProps } from "react";
+import { getEnquiryWhatsAppUrl } from "@/lib/whatsapp";
 
 type IconProps = SVGProps<SVGSVGElement>;
 
@@ -119,21 +120,28 @@ const CONTACT_INFO = [
   {
     label: "WhatsApp",
     value: "Chat with us",
-    href: "https://wa.me/15550218842",
+    href: "https://wa.me/918544924982",
     Icon: WhatsAppIcon,
   },
 ] as const;
 
 export default function ContactSection() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setStatus("sending");
+    const whatsappUrl = getEnquiryWhatsAppUrl(
+      form.name,
+      form.phone,
+      form.email,
+      form.message,
+    );
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     window.setTimeout(() => {
       setStatus("sent");
-      setForm({ name: "", email: "", message: "" });
+      setForm({ name: "", email: "", phone: "", message: "" });
     }, 900);
   };
 
@@ -255,6 +263,26 @@ export default function ContactSection() {
                       setForm((prev) => ({ ...prev, name: event.target.value }))
                     }
                     placeholder="Your name"
+                    className="w-full rounded-xl border border-coffee/15 bg-cream/60 px-4 py-3 text-sm text-coffee outline-none transition-colors duration-200 placeholder:text-coffee/40 focus:border-accent focus:ring-2 focus:ring-accent/20"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="contact-phone"
+                    className="mb-1.5 block text-xs font-medium tracking-wide text-coffee/60 uppercase"
+                  >
+                    Phone
+                  </label>
+                  <input
+                    id="contact-phone"
+                    type="tel"
+                    required
+                    value={form.phone}
+                    onChange={(event) =>
+                      setForm((prev) => ({ ...prev, phone: event.target.value }))
+                    }
+                    placeholder="+91 98765 43210"
                     className="w-full rounded-xl border border-coffee/15 bg-cream/60 px-4 py-3 text-sm text-coffee outline-none transition-colors duration-200 placeholder:text-coffee/40 focus:border-accent focus:ring-2 focus:ring-accent/20"
                   />
                 </div>

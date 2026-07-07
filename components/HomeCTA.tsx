@@ -1,6 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { useWhatsAppModal } from "@/components/WhatsAppModalContext";
 
 export default function HomeCTA() {
+  const { openBookingModal } = useWhatsAppModal();
+
   return (
     <section className="relative overflow-hidden px-6 py-24 sm:px-8 lg:px-12">
       <div
@@ -24,12 +29,13 @@ export default function HomeCTA() {
           >
             View Menu
           </Link>
-          <Link
-            href="/contact"
+          <button
+            type="button"
+            onClick={openBookingModal}
             className="inline-flex items-center justify-center rounded-full bg-coffee px-8 py-3.5 text-sm font-medium text-cream shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent hover:shadow-lg"
           >
             Reserve a Table
-          </Link>
+          </button>
         </div>
       </div>
     </section>

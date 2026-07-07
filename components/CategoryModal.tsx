@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import type { Product } from "@/components/categoryProducts";
-import { useCart } from "@/components/CartContext";
+import { useWhatsAppModal } from "@/components/WhatsAppModalContext";
 
 type CategoryModalProps = {
   title: string;
@@ -100,14 +100,7 @@ export default function CategoryModal({
 }
 
 function ProductCard({ product }: { product: Product }) {
-  const { addItem } = useCart();
-  const [justAdded, setJustAdded] = useState(false);
-
-  const handleAdd = () => {
-    addItem(product);
-    setJustAdded(true);
-    window.setTimeout(() => setJustAdded(false), 1200);
-  };
+  const { openOrderModal } = useWhatsAppModal();
 
   return (
     <div className="group flex flex-col overflow-hidden rounded-2xl bg-card shadow-[0_8px_24px_-10px_rgba(75,50,40,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_35px_-12px_rgba(75,50,40,0.28)]">
@@ -134,29 +127,12 @@ function ProductCard({ product }: { product: Product }) {
           </span>
           <button
             type="button"
-            onClick={handleAdd}
-            className={`inline-flex min-h-11 items-center gap-1.5 rounded-full px-4 py-2 text-xs font-medium transition-all duration-300 ${
-              justAdded
-                ? "bg-accent text-coffee"
-                : "bg-coffee text-cream hover:bg-accent hover:shadow-md"
-            }`}
+            onClick={() =>
+              openOrderModal({ name: product.name, price: product.price })
+            }
+            className="inline-flex min-h-11 items-center gap-1.5 rounded-full bg-coffee px-4 py-2 text-xs font-medium text-cream transition-all duration-300 hover:bg-accent hover:shadow-md"
           >
-            {justAdded ? (
-              <>
-                <svg viewBox="0 0 20 20" fill="none" className="h-3.5 w-3.5">
-                  <path
-                    d="M4 10.5 8 14l8-8"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                Added
-              </>
-            ) : (
-              "Add to Cart"
-            )}
+            Order on WhatsApp
           </button>
         </div>
       </div>

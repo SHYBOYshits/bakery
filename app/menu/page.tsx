@@ -2,11 +2,11 @@
 
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Check, Search, ShoppingCart, X } from "lucide-react";
+import { Search, X } from "lucide-react";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import { CATEGORY_PRODUCTS, type Product } from "@/components/categoryProducts";
-import { useCart } from "@/components/CartContext";
+import { useWhatsAppModal } from "@/components/WhatsAppModalContext";
 
 const FILTERS = [
   { label: "All", emoji: null },
@@ -195,14 +195,7 @@ function MenuProductCard({
   product: MenuItem;
   query: string;
 }): ReactNode {
-  const { addItem } = useCart();
-  const [justAdded, setJustAdded] = useState(false);
-
-  const handleAdd = () => {
-    addItem(product);
-    setJustAdded(true);
-    window.setTimeout(() => setJustAdded(false), 1200);
-  };
+  const { openOrderModal } = useWhatsAppModal();
 
   return (
     <motion.div
@@ -236,19 +229,12 @@ function MenuProductCard({
           </span>
           <button
             type="button"
-            onClick={handleAdd}
-            className={`inline-flex min-h-11 items-center gap-1.5 rounded-full px-4 py-2 text-xs font-medium transition-all duration-300 ${
-              justAdded
-                ? "bg-accent text-coffee"
-                : "bg-coffee text-cream hover:bg-accent hover:shadow-md"
-            }`}
+            onClick={() =>
+              openOrderModal({ name: product.name, price: product.price })
+            }
+            className="inline-flex min-h-11 items-center gap-1.5 rounded-full bg-coffee px-4 py-2 text-xs font-medium text-cream transition-all duration-300 hover:bg-accent hover:shadow-md"
           >
-            {justAdded ? (
-              <Check className="h-3.5 w-3.5" />
-            ) : (
-              <ShoppingCart className="h-3.5 w-3.5" />
-            )}
-            {justAdded ? "Added" : "Add to Cart"}
+            Order on WhatsApp
           </button>
         </div>
       </div>
