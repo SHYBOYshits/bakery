@@ -90,7 +90,7 @@ const TIMELINE = [
     year: "2010",
     title: "A Small Beginning",
     description:
-      "BrownCrust Cafe opened its doors as a tiny corner bakery with just three ovens.",
+      "Beany Barista opened its doors as a tiny corner bakery with just three ovens.",
   },
   {
     year: "2014",
@@ -139,7 +139,7 @@ export default function AboutPage() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
             <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-white px-4 py-1.5 text-xs font-medium tracking-[0.2em] text-accent uppercase shadow-sm">
-              About BrownCrust Cafe
+              About Beany Barista
             </span>
             <h1 className="mt-6 font-display text-4xl leading-[1.1] font-semibold text-coffee sm:text-5xl lg:text-6xl">
               Baking Happiness Into Every Corner Since 2010
@@ -160,7 +160,7 @@ export default function AboutPage() {
           >
             <Image
               src={unsplash("1509440159596-0249088772ff")}
-              alt="Freshly baked bread at BrownCrust Cafe"
+              alt="Freshly baked bread at Beany Barista"
               fill
               sizes="(min-width: 1024px) 45vw, 90vw"
               className="object-cover"
@@ -179,7 +179,7 @@ export default function AboutPage() {
           >
             <Image
               src={unsplash("1554118811-1e0d58224f24")}
-              alt="Inside the BrownCrust Cafe kitchen"
+              alt="Inside the Beany Barista kitchen"
               fill
               sizes="(min-width: 1024px) 45vw, 90vw"
               className="object-cover"
@@ -194,7 +194,7 @@ export default function AboutPage() {
               From One Oven To A Neighborhood Staple
             </h2>
             <p className="mt-4 leading-relaxed text-coffee/70">
-              BrownCrust Cafe began in 2010 as a small family bakery with a
+              Beany Barista began in 2010 as a small family bakery with a
               single goal: bake bread the way it used to be made — slow,
               honest, and full of flavor. Word spread quickly, and what
               started with a handful of regulars grew into a full bakery and

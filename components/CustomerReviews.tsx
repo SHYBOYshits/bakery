@@ -19,7 +19,7 @@ const REVIEWS = [
     name: "James Carter",
     role: "Food Blogger",
     rating: 5,
-    text: "BrownCrust Cafe has become my go-to spot for both coffee and dessert. The Black Forest cake is unreal.",
+    text: "Beany Barista has become my go-to spot for both coffee and dessert. The Black Forest cake is unreal.",
     avatar: unsplash("1500648767791-00dcc994a43e"),
   },
   {

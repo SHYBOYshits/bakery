@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Poppins } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { WhatsAppModalProvider } from "@/components/WhatsAppModalContext";
@@ -20,9 +21,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "BrownCrust Cafe | Luxury Bakery & Cafe",
+  title: "Beany Barista | Luxury Bakery & Cafe",
   description:
-    "BrownCrust Cafe — handcrafted pastries, artisan bread, and premium coffee, baked fresh daily.",
+    "Beany Barista — handcrafted pastries, artisan bread, and premium coffee, baked fresh daily.",
 };
 
 export default function RootLayout({
@@ -43,6 +44,7 @@ export default function RootLayout({
           <OrderWhatsAppModal />
           <BookingWhatsAppModal />
         </WhatsAppModalProvider>
+        <Analytics />
       </body>
     </html>
   );

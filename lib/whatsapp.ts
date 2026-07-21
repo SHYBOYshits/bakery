@@ -11,7 +11,7 @@ export function getOrderWhatsAppUrl(
   phone: string,
   address: string,
 ) {
-  const message = `Hello BrownCrust Cafe,\n\nI would like to order.\n\nCustomer Name: ${customerName}\nPhone: ${phone}\nDelivery Address: ${address}\n\nFood Item: ${itemName}\nPrice: $${price.toFixed(2)}\n\nPlease confirm my order.`;
+  const message = `Hello Beany Barista,\n\nI would like to order.\n\nCustomer Name: ${customerName}\nPhone: ${phone}\nDelivery Address: ${address}\n\nFood Item: ${itemName}\nPrice: $${price.toFixed(2)}\n\nPlease confirm my order.`;
   return buildWhatsAppUrl(message);
 }
 
@@ -22,7 +22,7 @@ export function getBookingWhatsAppUrl(
   time: string,
   guests: string,
 ) {
-  const message = `Hello BrownCrust Cafe,\n\nI would like to reserve a table.\n\nName: ${name}\nPhone: ${phone}\nDate: ${date}\nTime: ${time}\nGuests: ${guests}\n\nPlease confirm my reservation.`;
+  const message = `Hello Beany Barista,\n\nI would like to reserve a table.\n\nName: ${name}\nPhone: ${phone}\nDate: ${date}\nTime: ${time}\nGuests: ${guests}\n\nPlease confirm my reservation.`;
   return buildWhatsAppUrl(message);
 }
 
@@ -32,6 +32,6 @@ export function getEnquiryWhatsAppUrl(
   email: string,
   message: string,
 ) {
-  const text = `Hello BrownCrust Cafe,\n\nI have an enquiry.\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nMessage: ${message}`;
+  const text = `Hello Beany Barista,\n\nI have an enquiry.\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nMessage: ${message}`;
   return buildWhatsAppUrl(text);
 }

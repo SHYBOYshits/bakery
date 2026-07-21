@@ -64,7 +64,7 @@ export default function BookingWhatsAppModal() {
             <div className="flex items-start justify-between gap-4 border-b border-coffee/10 px-6 py-6">
               <div>
                 <span className="text-xs font-medium tracking-[0.2em] text-accent uppercase">
-                  BrownCrust Cafe
+                  Beany Barista
                 </span>
                 <h2 className="mt-2 font-display text-2xl font-semibold text-coffee">
                   Reserve a Table

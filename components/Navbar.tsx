@@ -43,7 +43,7 @@ export default function Navbar() {
           href="/"
           className="font-display text-2xl font-semibold tracking-wide text-coffee"
         >
-          BrownCrust <span className="text-accent">Cafe</span>
+          Beany <span className="text-accent">Barista</span>
         </Link>
 
         <ul className="hidden items-center gap-10 lg:flex">

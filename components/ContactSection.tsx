@@ -101,8 +101,8 @@ const CONTACT_INFO = [
   },
   {
     label: "Email",
-    value: "hello@browncrustcafe.com",
-    href: "mailto:hello@browncrustcafe.com",
+    value: "hello@beanybarista.com",
+    href: "mailto:hello@beanybarista.com",
     Icon: MailIcon,
   },
   {
@@ -113,7 +113,7 @@ const CONTACT_INFO = [
   },
   {
     label: "Instagram",
-    value: "@browncrustcafe",
+    value: "@beanybarista",
     href: "#",
     Icon: InstagramIcon,
   },
@@ -165,7 +165,7 @@ export default function ContactSection() {
           <div className="flex flex-col gap-8">
             <div className="overflow-hidden rounded-2xl bg-card shadow-[0_8px_30px_-12px_rgba(75,50,40,0.15)]">
               <iframe
-                title="BrownCrust Cafe location"
+                title="Beany Barista location"
                 src="https://www.google.com/maps?q=221B+Maple+Street,+Downtown&output=embed"
                 className="h-72 w-full border-0 sm:h-80"
                 loading="lazy"

@@ -32,7 +32,7 @@ export default function HomeAbout() {
           <div className="relative order-2 aspect-[4/3] overflow-hidden rounded-3xl shadow-[0_20px_45px_-20px_rgba(75,50,40,0.25)] lg:order-1">
             <Image
               src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?auto=format&fit=crop&w=900&q=80"
-              alt="Fresh pastries displayed at BrownCrust Cafe"
+              alt="Fresh pastries displayed at Beany Barista"
               fill
               sizes="(min-width: 1024px) 45vw, 90vw"
               className="object-cover"
@@ -41,14 +41,14 @@ export default function HomeAbout() {
 
           <div className="order-1 lg:order-2">
             <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-white px-4 py-1.5 text-xs font-medium tracking-[0.2em] text-accent uppercase shadow-sm">
-              About BrownCrust Cafe
+              About Beany Barista
             </span>
             <h2 className="mt-6 font-display text-3xl font-semibold text-coffee sm:text-4xl lg:text-5xl">
               About Us
             </h2>
 
             <p className="mt-6 leading-relaxed text-coffee/70">
-              BrownCrust Cafe began as a small neighborhood bakery with a
+              Beany Barista began as a small neighborhood bakery with a
               simple goal: bake bread the way it used to be made — slow,
               honest, and full of flavor. That same care now goes into every
               loaf, cake and cup of coffee we serve.
@@ -80,7 +80,7 @@ export default function HomeAbout() {
 
         <div className="mt-16">
           <h3 className="text-center font-display text-2xl font-semibold text-coffee sm:text-3xl">
-            Why Choose BrownCrust Cafe
+            Why Choose Beany Barista
           </h3>
 
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">

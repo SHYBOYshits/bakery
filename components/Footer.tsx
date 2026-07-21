@@ -41,7 +41,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-1">
             <p className="font-display text-2xl font-semibold text-cream">
-              BrownCrust <span className="text-accent">Cafe</span>
+              Beany <span className="text-accent">Barista</span>
             </p>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream/60">
               A modern bakery and cafe crafting warm, honest food with an
@@ -92,7 +92,7 @@ export default function Footer() {
             <ul className="mt-5 space-y-3 text-sm text-cream/60">
               <li>221B Maple Street, Downtown</li>
               <li>Open Daily, 7:00 AM – 9:00 PM</li>
-              <li>hello@browncrustcafe.com</li>
+              <li>hello@beanybarista.com</li>
             </ul>
           </div>
 
@@ -109,7 +109,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-cream/10 pt-8 sm:flex-row">
           <p className="text-xs text-cream/50">
-            &copy; {new Date().getFullYear()} BrownCrust Cafe. All rights
+            &copy; {new Date().getFullYear()} Beany Barista. All rights
             reserved.
           </p>
           <p className="text-xs text-cream/50">
